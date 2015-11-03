@@ -10,5 +10,5 @@ language: objective-c
 # - pod install --project-directory=Example
 osx_image: xcode9.1
 script:
-- set -o pipefail && xcodebuild test -workspace Example/sehkaiSwiftExtension.xcworkspace -scheme sehkaiSwiftExtension-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
+- set -o pipefail && xcodebuild test -workspace Example/sehkaiSwiftExtension.xcworkspace -scheme sehkaiSwiftExtension-Example -sdk iphonesimulator9.1 ONLY_ACTIVE_ARCH=NO | xcpretty
 - pod lib lint
