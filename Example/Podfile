@@ -2,13 +2,13 @@ source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
 target 'sehkaiSwiftExtension_Example', :exclusive => true do
-  pod "sehkaiSwiftExtension", :path => "../"
+  pod "SKSwiftExtension", :path => "../"
 end
 
 target 'sehkaiSwiftExtension_Tests', :exclusive => true do
-  pod "sehkaiSwiftExtension", :path => "../"
+  pod "SKSwiftExtension", :path => "../"
 
-  pod 'Quick', '~> 0.3.1'
+  pod 'Quick', '~> 0.8.0'
   pod 'Nimble'
   pod 'FBSnapshotTestCase'
   pod 'Nimble-Snapshots'

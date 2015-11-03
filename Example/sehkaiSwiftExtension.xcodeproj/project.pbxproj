@@ -13,7 +13,13 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		E21F12591BE8B344008AD4FD /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21F12581BE8B344008AD4FD /* StringTests.swift */; };
+		E21F125B1BE8B352008AD4FD /* UIImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21F125A1BE8B352008AD4FD /* UIImageTests.swift */; };
+		E21F125D1BE8B35B008AD4FD /* UIViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21F125C1BE8B35B008AD4FD /* UIViewTests.swift */; };
+		E21F125F1BE8B364008AD4FD /* KeyboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21F125E1BE8B364008AD4FD /* KeyboardTests.swift */; };
+		E23D6F1D1BE860C10076C829 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		E23D6F1F1BE8655A0076C829 /* ArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23D6F1E1BE8655A0076C829 /* ArrayTests.swift */; };
+		E23D6F211BE865BD0076C829 /* GeometryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23D6F201BE865BD0076C829 /* GeometryTests.swift */; };
 		E322BBA3177B31440F5AB520 /* Pods_sehkaiSwiftExtension_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F13FD1AC58DEDFCA3DDE31E /* Pods_sehkaiSwiftExtension_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,7 +38,7 @@
 		103BB375C6C8D6F53F0C4F4D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		20B9B6D7632D783964D0B296 /* Pods-sehkaiSwiftExtension_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sehkaiSwiftExtension_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-sehkaiSwiftExtension_Tests/Pods-sehkaiSwiftExtension_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		2D08966C04AC59B8C2E9275D /* Pods-sehkaiSwiftExtension_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sehkaiSwiftExtension_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sehkaiSwiftExtension_Example/Pods-sehkaiSwiftExtension_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		4DD9461C0C4BE7E8104F3CB1 /* sehkaiSwiftExtension.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = sehkaiSwiftExtension.podspec; path = ../sehkaiSwiftExtension.podspec; sourceTree = "<group>"; };
+		4DD9461C0C4BE7E8104F3CB1 /* SKSwiftExtension.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SKSwiftExtension.podspec; path = ../SKSwiftExtension.podspec; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* sehkaiSwiftExtension_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sehkaiSwiftExtension_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,13 +46,19 @@
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		607FACE51AFB9204008FA782 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Tests.xctest; path = sehkaiSwiftExtension_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		607FACE51AFB9204008FA782 /* sehkaiSwiftExtension_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sehkaiSwiftExtension_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		64B87F996E1DBC297C041BAF /* Pods_sehkaiSwiftExtension_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sehkaiSwiftExtension_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94A6AE3912ABDF17C8045BFA /* Pods-sehkaiSwiftExtension_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sehkaiSwiftExtension_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-sehkaiSwiftExtension_Example/Pods-sehkaiSwiftExtension_Example.release.xcconfig"; sourceTree = "<group>"; };
 		CE36E80E0CB10797BBD38612 /* Pods-sehkaiSwiftExtension_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sehkaiSwiftExtension_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sehkaiSwiftExtension_Tests/Pods-sehkaiSwiftExtension_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		DCB5301B2AE26B5009C874B1 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		E21F12581BE8B344008AD4FD /* StringTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
+		E21F125A1BE8B352008AD4FD /* UIImageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageTests.swift; sourceTree = "<group>"; };
+		E21F125C1BE8B35B008AD4FD /* UIViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewTests.swift; sourceTree = "<group>"; };
+		E21F125E1BE8B364008AD4FD /* KeyboardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardTests.swift; sourceTree = "<group>"; };
+		E23D6F1E1BE8655A0076C829 /* ArrayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayTests.swift; sourceTree = "<group>"; };
+		E23D6F201BE865BD0076C829 /* GeometryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeometryTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACD01AFB9204008FA782 /* sehkaiSwiftExtension_Example.app */,
-				607FACE51AFB9204008FA782 /* Tests.xctest */,
+				607FACE51AFB9204008FA782 /* sehkaiSwiftExtension_Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -116,6 +128,12 @@
 			isa = PBXGroup;
 			children = (
 				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				E23D6F1E1BE8655A0076C829 /* ArrayTests.swift */,
+				E23D6F201BE865BD0076C829 /* GeometryTests.swift */,
+				E21F12581BE8B344008AD4FD /* StringTests.swift */,
+				E21F125A1BE8B352008AD4FD /* UIImageTests.swift */,
+				E21F125C1BE8B35B008AD4FD /* UIViewTests.swift */,
+				E21F125E1BE8B364008AD4FD /* KeyboardTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -132,7 +150,7 @@
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				4DD9461C0C4BE7E8104F3CB1 /* sehkaiSwiftExtension.podspec */,
+				4DD9461C0C4BE7E8104F3CB1 /* SKSwiftExtension.podspec */,
 				103BB375C6C8D6F53F0C4F4D /* README.md */,
 				DCB5301B2AE26B5009C874B1 /* LICENSE */,
 			);
@@ -200,7 +218,7 @@
 			);
 			name = sehkaiSwiftExtension_Tests;
 			productName = Tests;
-			productReference = 607FACE51AFB9204008FA782 /* Tests.xctest */;
+			productReference = 607FACE51AFB9204008FA782 /* sehkaiSwiftExtension_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -209,7 +227,8 @@
 		607FACC81AFB9204008FA782 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
@@ -367,7 +386,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				E23D6F1D1BE860C10076C829 /* Tests.swift in Sources */,
+				E23D6F211BE865BD0076C829 /* GeometryTests.swift in Sources */,
+				E21F125D1BE8B35B008AD4FD /* UIViewTests.swift in Sources */,
+				E21F125F1BE8B364008AD4FD /* KeyboardTests.swift in Sources */,
+				E21F125B1BE8B352008AD4FD /* UIImageTests.swift in Sources */,
+				E21F12591BE8B344008AD4FD /* StringTests.swift in Sources */,
+				E23D6F1F1BE8655A0076C829 /* ArrayTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +447,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -490,6 +516,7 @@
 				INFOPLIST_FILE = sehkaiSwiftExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -502,6 +529,7 @@
 				INFOPLIST_FILE = sehkaiSwiftExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -511,16 +539,14 @@
 			baseConfigurationReference = CE36E80E0CB10797BBD38612 /* Pods-sehkaiSwiftExtension_Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sehkaiSwiftExtension_Example.app/sehkaiSwiftExtension_Example";
 			};
@@ -531,12 +557,10 @@
 			baseConfigurationReference = 20B9B6D7632D783964D0B296 /* Pods-sehkaiSwiftExtension_Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sehkaiSwiftExtension_Example.app/sehkaiSwiftExtension_Example";
 			};

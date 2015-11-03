@@ -7,7 +7,7 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = "sehkaiSwiftExtension"
+  s.name             = "SKSwiftExtension"
   s.version          = "0.1.0"
   s.summary          = "A short description of sehkaiSwiftExtension."
 
@@ -19,11 +19,11 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
                        DESC
 
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/sehkaiSwiftExtension"
+  s.homepage         = "https://github.com/sehkai/SKSwiftExtension"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
-  s.author           = { "Matthew Nguyen" => "contact@n-studio.fr" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/sehkaiSwiftExtension.git", :tag => s.version.to_s }
+  s.author           = "Matthew Nguyen"
+  s.source           = { :git => "https://github.com/sehkai/SKSwiftExtension.git", :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.platform     = :ios, '8.0'
@@ -35,6 +35,6 @@ Pod::Spec.new do |s|
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
+  s.frameworks = 'UIKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 end
