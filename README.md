@@ -1,9 +1,9 @@
 # sehkaiSwiftExtension
 
-[![CI Status](http://img.shields.io/travis/Matthew Nguyen/sehkaiSwiftExtension.svg?style=flat)](https://travis-ci.org/Matthew Nguyen/sehkaiSwiftExtension)
-[![Version](https://img.shields.io/cocoapods/v/sehkaiSwiftExtension.svg?style=flat)](http://cocoapods.org/pods/sehkaiSwiftExtension)
-[![License](https://img.shields.io/cocoapods/l/sehkaiSwiftExtension.svg?style=flat)](http://cocoapods.org/pods/sehkaiSwiftExtension)
-[![Platform](https://img.shields.io/cocoapods/p/sehkaiSwiftExtension.svg?style=flat)](http://cocoapods.org/pods/sehkaiSwiftExtension)
+[![CI Status](http://img.shields.io/travis/sehkai/SKSwiftExtension.svg?style=flat)](https://travis-ci.org/sehkai/SKSwiftExtension)
+[![Version](https://img.shields.io/cocoapods/v/SKSwiftExtension.svg?style=flat)](http://cocoapods.org/pods/SKSwiftExtension)
+[![License](https://img.shields.io/cocoapods/l/SKSwiftExtension.svg?style=flat)](http://cocoapods.org/pods/SKSwiftExtension)
+[![Platform](https://img.shields.io/cocoapods/p/SKSwiftExtension.svg?style=flat)](http://cocoapods.org/pods/SKSwiftExtension)
 
 ## Usage
 
@@ -17,7 +17,7 @@ sehkaiSwiftExtension is available through [CocoaPods](http://cocoapods.org). To 
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "sehkaiSwiftExtension"
+pod "SKSwiftExtension", git: "https://github.com/sehkai/SKSwiftExtension"
 ```
 
 ## Author
