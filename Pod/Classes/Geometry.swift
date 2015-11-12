@@ -10,6 +10,12 @@
 
 import Foundation
 
+extension CGFloat {
+    public func toRad() -> CGFloat {
+        return (CGFloat(M_PI) * self / 180.0)
+    }
+}
+
 infix operator ** { associativity left precedence 160 }
 public func ** (left: CGFloat, right: CGFloat) -> CGFloat! {
     return pow(left, right)

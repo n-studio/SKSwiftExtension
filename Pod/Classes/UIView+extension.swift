@@ -8,7 +8,26 @@
 
 import UIKit
 
-extension UIView {    
+extension UIView {
+    
+    private struct Properties {
+        static var isJiggling: Bool = false
+    }
+    
+    public var isJiggling: Bool {
+        get {
+            if let bool = objc_getAssociatedObject(self, &Properties.isJiggling) as? Bool {
+                return bool
+            }
+            else {
+                return false
+            }
+        }
+        set(newValue) {
+            objc_setAssociatedObject(self, &Properties.isJiggling, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_COPY)
+        }
+    }
+    
     public func setRadius(value: CGFloat) {
         self.layer.cornerRadius = value
     }
@@ -24,5 +43,37 @@ extension UIView {
         let color = UIColor(hue: hue / 36.0, saturation: 1.0, brightness: 1.0, alpha: 1.0)
         self.layer.borderColor = color.CGColor
         self.layer.borderWidth = 1.5
+    }
+    
+    // http://stackoverflow.com/a/7284435/1013713
+    public func startJiggleAnimation() {
+        if isJiggling {
+            return
+        }
+        
+        isJiggling = true
+        
+        let kAnimationRotateDeg: CGFloat = 1.0
+        let randomInt = CGFloat(arc4random_uniform(500))
+        let r = (randomInt/500.0)+0.5
+        
+        let leftWobble = CGAffineTransformMakeRotation(((kAnimationRotateDeg * -1.0) - r).toRad())
+        let rightWobble = CGAffineTransformMakeRotation((kAnimationRotateDeg + r).toRad())
+        
+        self.transform = leftWobble
+        
+        UIView.animateWithDuration(0.15, delay: 0,
+            options: [.AllowUserInteraction, .Repeat, .Autoreverse],
+            animations: {
+                self.transform = rightWobble
+            },
+            completion: nil)
+    }
+    
+    public func stopJiggleAnimation() {
+        self.layer.removeAllAnimations()
+        self.transform = CGAffineTransformIdentity // Set it back to straight
+        
+        isJiggling = false
     }
 }
