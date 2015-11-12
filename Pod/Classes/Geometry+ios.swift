@@ -13,12 +13,11 @@ extension UIView {
         if self.superview == view {
             return self.frame
         }
-        else if self.superview != nil {
-            let next = self.superview!.originInView(view)
-            if next == nil {
+        else if let superview = self.superview {
+            guard let next = superview.originInView(view) else {
                 return nil
             }
-            return CGRect(origin: self.frame.origin + next!, size: self.frame.size)
+            return CGRect(origin: self.frame.origin + next, size: self.frame.size)
         }
         else {
             return nil
@@ -31,12 +30,11 @@ extension UIView {
         if self.superview == view {
             return self.frame.origin * view.transform
         }
-        else if self.superview != nil {
-            let next = self.superview!.originInView(view)
-            if next == nil {
+        else if let superview = self.superview {
+            guard let next = superview.originInView(view) else {
                 return nil
             }
-            return self.frame.origin * view.transform + next!
+            return self.frame.origin * view.transform + next
         }
         else {
             return nil
@@ -49,12 +47,11 @@ extension UIView {
         if self.superview == view {
             return self.center * view.transform
         }
-        else if self.superview != nil {
-            let next = self.superview!.originInView(view)
-            if next == nil {
+        else if let superview = self.superview {
+            guard let next = superview.originInView(view) else {
                 return nil
             }
-            return self.center * view.transform + next!
+            return self.center * view.transform + next
         }
         else {
             return nil

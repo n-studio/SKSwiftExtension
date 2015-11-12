@@ -38,10 +38,9 @@ extension UIAlertController {
         
         for textField in self.textFields! {
             let container = textField.superview
-            let effectView = container?.superview?.subviews[0]
-            if effectView != nil && effectView is UIVisualEffectView {
+            if let effectView = container?.superview?.subviews[0] where effectView is UIVisualEffectView {
                 container?.backgroundColor = UIColor.clearColor()
-                effectView?.removeFromSuperview()
+                effectView.removeFromSuperview()
             }
         }
     }
