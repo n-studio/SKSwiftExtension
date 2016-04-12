@@ -68,11 +68,11 @@ extension UIViewController {
     }
     
     public func bs_setKeyboardNotifications() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "bs_keyboardWillAppear:", name: UIKeyboardWillShowNotification, object:nil
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(bs_keyboardWillAppear(_:)), name: UIKeyboardWillShowNotification, object:nil
         )
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "bs_keyboardDidAppear:", name: UIKeyboardDidShowNotification, object:nil
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(bs_keyboardDidAppear(_:)), name: UIKeyboardDidShowNotification, object:nil
         )
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "bs_keyboardWillHide:", name: UIKeyboardWillHideNotification, object:nil
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(bs_keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object:nil
         )
     }
     
@@ -91,7 +91,7 @@ extension UIViewController {
     
     public func bs_keyboardWillAppear(notification: NSNotification) {
         if self.outsideKeyboardTapRecognizer == nil {
-            self.outsideKeyboardTapRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard:")
+            self.outsideKeyboardTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard(_:)))
         }
         if let recognizer = self.outsideKeyboardTapRecognizer {
             self.view.addGestureRecognizer(recognizer)

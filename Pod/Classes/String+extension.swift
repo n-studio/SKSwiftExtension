@@ -52,7 +52,7 @@ extension String {
             lastIndex = -1
         }
         
-        return substringWithRange(Range(start: startIndex.advancedBy(firstIndex), end: startIndex.advancedBy(lastIndex + 1)))
+        return substringWithRange(Range(startIndex.advancedBy(firstIndex)..<startIndex.advancedBy(lastIndex + 1)))
     }
     
     public func replace(pattern: String, text: String, options: [String:AnyObject]!) -> String {
