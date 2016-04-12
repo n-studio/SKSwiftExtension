@@ -11,19 +11,19 @@ class ArraySpec: QuickSpec {
             it("remove object") {
                 var array = ["Hello", 1, 2, 4.0, "Goodbye"]
                 array.removeObject("Goodbye")
-                expect(4) == array.count
+                expect(array.count).to(equal(4)) 
             }
             
             it("remove several objects") {
                 var array = ["Hello", 4, 2, 4.0, "Goodbye"]
                 array.removeObject(4)
-                expect(3) == array.count
+                expect(array.count).to(equal(3))
             }
             
             it("remove several objects") {
                 var array = ["Hello", 4, 2, 4.0, "Goodbye"]
                 array.removeObject(4.0)
-                expect(3) == array.count
+                expect(array.count).to(equal(3))
             }
         }
     }
