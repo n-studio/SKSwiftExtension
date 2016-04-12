@@ -55,21 +55,26 @@ extension String {
         return substringWithRange(Range(startIndex.advancedBy(firstIndex)..<startIndex.advancedBy(lastIndex + 1)))
     }
     
-    public func replace(pattern: String, text: String, options: [String:AnyObject]!) -> String {
+    public func replace(pattern: String, withString text: String, options: [String:AnyObject]!) -> String {
         let length = self.characters.count
-        var caseSensitive: NSRegularExpressionOptions!
-        if options != nil {
-            caseSensitive = options["case"] as? NSRegularExpressionOptions
+        var regexOptions: NSRegularExpressionOptions
+        if let caseSensitive = options["caseSensitive"] {
+            if caseSensitive as? Bool == true {
+                regexOptions = NSRegularExpressionOptions.init(rawValue: 0)
+            }
+            else {
+                regexOptions = NSRegularExpressionOptions.CaseInsensitive
+            }
         }
-        if caseSensitive == nil {
-            caseSensitive = .CaseInsensitive
+        else {
+            regexOptions = NSRegularExpressionOptions.init(rawValue: 0)
         }
-        let regex = try! NSRegularExpression(pattern: pattern, options: caseSensitive)
+        let regex = try! NSRegularExpression(pattern: pattern, options: regexOptions)
         return regex.stringByReplacingMatchesInString(self, options: [], range: NSMakeRange(0, length), withTemplate: text)
     }
     
-    public func replace(target: String, withString: String) -> String {
-        return self.stringByReplacingOccurrencesOfString(target, withString: withString, options: NSStringCompareOptions.LiteralSearch, range: nil)
+    public func replace(target: String, withString text: String) -> String {
+        return self.stringByReplacingOccurrencesOfString(target, withString: text, options: NSStringCompareOptions.LiteralSearch, range: nil)
     }
     
     public func split(splitter: String) -> Array<String> {

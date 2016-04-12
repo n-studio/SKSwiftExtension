@@ -9,6 +9,14 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+### String
+
+```swift
+"hello world"[0..<2] //=> "he"
+"hello world"[-5 ... -1] //=> "world"
+"hello world".replace("World", withString: "kitty", options: ["caseSensitive": false]) //=> "hello kitty"
+```
+
 ## Requirements
 
 ## Installation
@@ -22,7 +30,7 @@ pod "SKSwiftExtension", git: "git@github.com:sehkai/SKSwiftExtension.git"
 
 ## Author
 
-Matthew Nguyen, contact@n-studio.fr
+Matthew Nguyen
 
 ## License
 

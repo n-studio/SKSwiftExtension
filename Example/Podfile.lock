@@ -1,21 +1,10 @@
 PODS:
-  - FBSnapshotTestCase (2.1.0):
-    - FBSnapshotTestCase/SwiftSupport (= 2.1.0)
-  - FBSnapshotTestCase/Core (2.1.0)
-  - FBSnapshotTestCase/SwiftSupport (2.1.0):
-    - FBSnapshotTestCase/Core
   - Nimble (4.0.0)
-  - Nimble-Snapshots (4.0.1):
-    - FBSnapshotTestCase (~> 2.0)
-    - Nimble
-    - Quick
   - Quick (0.9.2)
   - SKSwiftExtension (0.1.0)
 
 DEPENDENCIES:
-  - FBSnapshotTestCase
   - Nimble
-  - Nimble-Snapshots
   - Quick (~> 0.9.0)
   - SKSwiftExtension (from `../`)
 
@@ -24,9 +13,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  FBSnapshotTestCase: 366ecd378511d7716c79991cd8067d1eed23578d
   Nimble: 72bcc3e2f02242e6bfaaf8d9412ca7bfe3d8b417
-  Nimble-Snapshots: 2d15a585b816f7d14947ed6e172218f9d0980ea8
   Quick: 18d057bc66451eedd5d1c8dc99ba2a5db6e60226
   SKSwiftExtension: e9584fb553dd63cbc3ddb8cd0b3469e025b3585e
 

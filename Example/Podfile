@@ -10,6 +10,4 @@ target 'sehkaiSwiftExtension_Tests', :exclusive => true do
 
   pod 'Quick', '~> 0.9.0'
   pod 'Nimble'
-  pod 'FBSnapshotTestCase'
-  pod 'Nimble-Snapshots'
 end
