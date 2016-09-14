@@ -2,10 +2,12 @@
 # * http://www.objc.io/issue-6/travis-ci.html
 # * https://github.com/supermarin/xcpretty#usage
 
+rvm: 2.2.4
 language: objective-c
 cache: cocoapods
 podfile: Example/Podfile
 before_install:
+- gem uninstall cocoapods -a
 - gem install cocoapods --pre # Since Travis is not always on latest version
 - pod install --project-directory=Example
 osx_image: xcode8.0
