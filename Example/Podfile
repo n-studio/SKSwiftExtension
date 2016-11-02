@@ -9,7 +9,7 @@ target 'sehkaiSwiftExtension_Tests' do
   pod "SKSwiftExtension", :path => "../"
 
   pod 'Quick', '~> 0.9.0'
-  pod 'Nimble'
+  pod 'Nimble', '~> 4.1'
   # pod 'FBSnapshotTestCase'
   # pod 'Nimble-Snapshots'
 end

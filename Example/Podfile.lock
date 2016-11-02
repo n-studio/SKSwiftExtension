@@ -4,7 +4,7 @@ PODS:
   - SKSwiftExtension (0.1.0)
 
 DEPENDENCIES:
-  - Nimble
+  - Nimble (~> 4.1)
   - Quick (~> 0.9.0)
   - SKSwiftExtension (from `../`)
 
@@ -17,6 +17,6 @@ SPEC CHECKSUMS:
   Quick: 13a2a2b19a5d8e3ed4fd0c36ee46597fd77ebf71
   SKSwiftExtension: e9584fb553dd63cbc3ddb8cd0b3469e025b3585e
 
-PODFILE CHECKSUM: 2fe1deb310201b0e2a1e09d120696497afda86d4
+PODFILE CHECKSUM: 517bb277753aa8e324c37efe6b21a5151935e6c1
 
-COCOAPODS: 1.1.0.rc.2
+COCOAPODS: 1.1.0.rc.3
