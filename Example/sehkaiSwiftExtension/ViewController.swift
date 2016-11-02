@@ -26,12 +26,12 @@ class ViewController: UIViewController {
         jigglingView.addGestureRecognizer(tapGesture)
     }
     
-    func toggleJiggling(sender: UIView) {
-        if sender.isJiggling {
-            sender.stopJiggleAnimation()
+    func toggleJiggling(sender: UITapGestureRecognizer) {
+        if sender.view?.isJiggling == true {
+            sender.view?.stopJiggleAnimation()
         }
         else {
-            sender.startJiggleAnimation()
+            sender.view?.startJiggleAnimation()
         }
     }
 

@@ -48,7 +48,9 @@ extension UIView {
     // http://stackoverflow.com/a/7284435/1013713
     public func startJiggleAnimation() {
         if isJiggling {
-            return
+            if let _ = self.layer.animationForKey("transform") {
+                return
+            }
         }
         
         isJiggling = true
@@ -71,7 +73,7 @@ extension UIView {
     }
     
     public func stopJiggleAnimation() {
-        self.layer.removeAllAnimations()
+        self.layer.removeAnimationForKey("transform")
         self.transform = CGAffineTransformIdentity // Set it back to straight
         
         isJiggling = false
