@@ -7,12 +7,32 @@
 //
 
 import UIKit
+import SKSwiftExtension
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        self.view.backgroundColor = UIColor.whiteColor()
+        
+        let jigglingView = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+        jigglingView.backgroundColor = UIColor.blackColor()
+        self.view.addSubview(jigglingView)
+        jigglingView.startJiggleAnimation()
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(toggleJiggling(_:)))
+        jigglingView.addGestureRecognizer(tapGesture)
+    }
+    
+    func toggleJiggling(sender: UIView) {
+        if sender.isJiggling {
+            sender.stopJiggleAnimation()
+        }
+        else {
+            sender.startJiggleAnimation()
+        }
     }
 
     override func didReceiveMemoryWarning() {
