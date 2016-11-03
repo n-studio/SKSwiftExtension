@@ -32,7 +32,7 @@ Miscellaneous extensions for Array, String, CGFloat, CGSize, UIImage, UIView, UI
 
   s.source_files = 'Pod/Classes/**/*'
   s.resource_bundles = {
-    'sehkaiSwiftExtension' => ['Pod/Assets/*.png']
+    # 'sehkaiSwiftExtension' => ['Pod/Assets/*.png']
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
