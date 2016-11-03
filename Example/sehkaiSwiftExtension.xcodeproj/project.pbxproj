@@ -523,7 +523,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2E346C2786E5F06875111476 /* Pods-sehkaiSwiftExtension_Example.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = sehkaiSwiftExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -538,7 +537,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1B3FF435824799DD479AE0E7 /* Pods-sehkaiSwiftExtension_Example.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = sehkaiSwiftExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -553,7 +551,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 37C44BFF82C8A8AF6F14EAD3 /* Pods-sehkaiSwiftExtension_Tests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -573,7 +570,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3805854ACB5808A9459CCCE3 /* Pods-sehkaiSwiftExtension_Tests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Info.plist;
