@@ -15,10 +15,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.view.backgroundColor = UIColor.whiteColor()
+        self.view.backgroundColor = UIColor.white
         
         let jigglingView = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
-        jigglingView.backgroundColor = UIColor.blackColor()
+        jigglingView.backgroundColor = UIColor.black
         self.view.addSubview(jigglingView)
         jigglingView.startJiggleAnimation()
         
@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         jigglingView.addGestureRecognizer(tapGesture)
     }
     
-    func toggleJiggling(sender: UITapGestureRecognizer) {
+    func toggleJiggling(_ sender: UITapGestureRecognizer) {
         if sender.view?.isJiggling == true {
             sender.view?.stopJiggleAnimation()
         }

@@ -9,21 +9,21 @@ class ArraySpec: QuickSpec {
         describe("array extension") {
             
             it("remove object") {
-                var array = ["Hello", 1, 2, 4.0, "Goodbye"]
-                array.removeObject("Goodbye")
+                var array = ["Hello", 1, 2, 4.0, "Goodbye"] as [Any]
+                array.removeObject(object: "Goodbye")
                 expect(array.count).to(equal(4)) 
             }
             
             it("remove several objects") {
-                var array = ["Hello", 4, 2, 4.0, "Goodbye"]
-                array.removeObject(4)
-                expect(array.count).to(equal(3))
+                var array = ["Hello", 4, 2, 4.0, "Goodbye"] as [Any]
+                array.removeObject(object: 4)
+                expect(array.count).to(equal(4))
             }
             
             it("remove several objects") {
-                var array = ["Hello", 4, 2, 4.0, "Goodbye"]
-                array.removeObject(4.0)
-                expect(array.count).to(equal(3))
+                var array = ["Hello", 4, 2, 4.0, "Goodbye"] as [Any]
+                array.removeObject(object: 4.0)
+                expect(array.count).to(equal(4))
             }
         }
     }

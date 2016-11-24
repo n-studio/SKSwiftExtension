@@ -16,13 +16,18 @@ extension CGFloat {
     }
 }
 
-infix operator ** { associativity left precedence 160 }
+precedencegroup ExponentiativePrecedence {
+    associativity: left
+    higherThan: MultiplicationPrecedence
+}
+
+infix operator **: ExponentiativePrecedence
 public func ** (left: CGFloat, right: CGFloat) -> CGFloat! {
     return pow(left, right)
 }
 
-infix operator **= { associativity right precedence 90 }
-public func **= (inout left: CGFloat, right: CGFloat) {
+infix operator **=: AssignmentPrecedence
+public func **= (left: inout CGFloat, right: CGFloat) {
     left = left ** right
 }
 
@@ -30,8 +35,8 @@ public func + (left: CGPoint, right: CGPoint) -> CGPoint {
     return CGPoint(x: left.x + right.x, y: left.y + right.y)
 }
 
-infix operator += { associativity right precedence 90 }
-public func += (inout left: CGPoint, right: CGPoint) {
+infix operator +=: AssignmentPrecedence
+public func += (left: inout CGPoint, right: CGPoint) {
     left = left + right
 }
 
@@ -43,8 +48,8 @@ public func - (left: CGPoint, right: CGPoint) -> CGPoint {
     return CGPoint(x: left.x - right.x, y: left.y - right.y)
 }
 
-infix operator -= { associativity right precedence 90 }
-public func -= (inout left: CGPoint, right: CGPoint) {
+infix operator -=: AssignmentPrecedence
+public func -= (left: inout CGPoint, right: CGPoint) {
     left = left - right
 }
 
@@ -80,29 +85,29 @@ public func round(number: CGFloat, to step: CGFloat) -> CGFloat {
     return round(number / step) * step
 }
 
-public func distance(points: [CGPoint]) -> CGFloat {
+public func distance(_ points: [CGPoint]) -> CGFloat {
     if points.count != 2 {
         return 0
     }
     return sqrt((points[1].x - points[0].x) ** 2 + (points[1].y - points[0].y) ** 2)
 }
 
-public func distance(points: CGPoint...) -> CGFloat {
+public func distance(_ points: CGPoint...) -> CGFloat {
     return distance(points)
 }
 
-public func angle(points: [CGPoint]) -> CGFloat {
+public func angle(_ points: [CGPoint]) -> CGFloat {
     if points.count != 2 {
         return 0
     }
     return atan2((points[1].y - points[0].y), (points[1].x - points[0].x))
 }
 
-public func angle(points: CGPoint...) -> CGFloat {
+public func angle(_ points: CGPoint...) -> CGFloat {
     return angle(points)
 }
 
-public func mean(points: [CGPoint]) -> CGPoint {
+public func mean(_ points: [CGPoint]) -> CGPoint {
     if points.count == 0 {
         return CGPoint.zero
     }
@@ -114,7 +119,7 @@ public func mean(points: [CGPoint]) -> CGPoint {
     return sum / CGFloat(points.count)
 }
 
-public func mean(points: CGPoint...) -> CGPoint {
+public func mean(_ points: CGPoint...) -> CGPoint {
     return mean(points)
 }
 

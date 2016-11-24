@@ -14,22 +14,24 @@ public func t(text: String, comment: String = "") -> String {
 
 extension String {
     
-    public subscript (i: Int) -> Character {
-        return self[self.startIndex.advancedBy(i)]
-    }
-    
     public subscript (i: Int) -> String {
-        return String(self[i] as Character)
+        if self.characters.count > i && i >= 0 {
+            return String(self[self.characters.index(self.startIndex, offsetBy: i)])
+        }
+        else if i <= 0 && i >= -self.characters.count {
+            return String(self[self.characters.index(self.startIndex, offsetBy: self.characters.count + i)])
+        }
+        return ""
     }
     
     public subscript (r: Range<Int>) -> String {
-        var firstIndex = min(r.startIndex, r.endIndex - 1)
-        var lastIndex = max(r.startIndex, r.endIndex - 1)
-        if firstIndex < 0 && lastIndex < 0 {
+        var firstIndex = min(r.lowerBound, r.upperBound)
+        var lastIndex = max(r.lowerBound, r.upperBound)
+        if firstIndex < 0 && lastIndex <= 0 {
             firstIndex = self.characters.count + firstIndex
             lastIndex = self.characters.count + lastIndex
         }
-        else if lastIndex < 0 {
+        else if lastIndex <= 0 && lastIndex < firstIndex {
             let tmpIndex = firstIndex
             firstIndex = lastIndex
             lastIndex = self.characters.count + tmpIndex
@@ -45,39 +47,39 @@ extension String {
         else if firstIndex < 0 {
             firstIndex = 0
         }
-        if lastIndex >= self.characters.count {
-            lastIndex = self.characters.count - 1
+        if lastIndex > self.characters.count {
+            lastIndex = self.characters.count
         }
         else if lastIndex < 0 {
-            lastIndex = -1
+            lastIndex = 0
         }
         
-        return substringWithRange(Range(startIndex.advancedBy(firstIndex)..<startIndex.advancedBy(lastIndex + 1)))
+        return substring(with: Range(characters.index(startIndex, offsetBy: firstIndex)..<characters.index(startIndex, offsetBy: lastIndex)))
     }
     
+    public subscript (r: CountableClosedRange<Int>) -> String {
+        return self[r.first! ..< r.last! + 1]
+    }
+
     public func replace(pattern: String, withString text: String, options: [String:AnyObject]!) -> String {
         let length = self.characters.count
-        var regexOptions: NSRegularExpressionOptions
+        var regexOptions: NSRegularExpression.Options
         if let caseSensitive = options["caseSensitive"] {
             if caseSensitive as? Bool == true {
-                regexOptions = NSRegularExpressionOptions.init(rawValue: 0)
+                regexOptions = NSRegularExpression.Options.init(rawValue: 0)
             }
             else {
-                regexOptions = NSRegularExpressionOptions.CaseInsensitive
+                regexOptions = NSRegularExpression.Options.caseInsensitive
             }
         }
         else {
-            regexOptions = NSRegularExpressionOptions.init(rawValue: 0)
+            regexOptions = NSRegularExpression.Options.init(rawValue: 0)
         }
         let regex = try! NSRegularExpression(pattern: pattern, options: regexOptions)
-        return regex.stringByReplacingMatchesInString(self, options: [], range: NSMakeRange(0, length), withTemplate: text)
-    }
-    
-    public func replace(target: String, withString text: String) -> String {
-        return self.stringByReplacingOccurrencesOfString(target, withString: text, options: NSStringCompareOptions.LiteralSearch, range: nil)
+        return regex.stringByReplacingMatches(in: self, options: [], range: NSMakeRange(0, length), withTemplate: text)
     }
     
     public func split(splitter: String) -> Array<String> {
-        return self.componentsSeparatedByString(splitter)
+        return self.components(separatedBy: splitter)
     }
 }

@@ -13,33 +13,33 @@ extension UIAlertController {
         
         self.init(title: title, message: message, preferredStyle: preferredStyle)
         if let title = cancelButtonTitle {
-            let action = UIAlertAction(title: title, style: UIAlertActionStyle.Cancel, handler: nil)
+            let action = UIAlertAction(title: title, style: UIAlertActionStyle.cancel, handler: nil)
             self.addAction(action)
         }
     }
     
     public func addCancelActionWithTitle(title: String, handler: ((UIAlertAction) -> Void)?) {
-        let action = UIAlertAction(title: title, style: UIAlertActionStyle.Cancel, handler: handler)
+        let action = UIAlertAction(title: title, style: UIAlertActionStyle.cancel, handler: handler)
         self.addAction(action)
     }
     
     public func addActionWithTitle(title: String, handler: ((UIAlertAction) -> Void)?) {
-        let action = UIAlertAction(title: title, style: UIAlertActionStyle.Default, handler: handler)
+        let action = UIAlertAction(title: title, style: UIAlertActionStyle.default, handler: handler)
         self.addAction(action)
     }
     
     public func addDestructiveActionWithTitle(title: String, handler: ((UIAlertAction) -> Void)?) {
-        let action = UIAlertAction(title: title, style: UIAlertActionStyle.Destructive, handler: handler)
+        let action = UIAlertAction(title: title, style: UIAlertActionStyle.destructive, handler: handler)
         self.addAction(action)
     }
     
     public func showIn(controller: UIViewController) {
-        controller.presentViewController(self, animated: true, completion: nil)
+        controller.present(self, animated: true, completion: nil)
         
         for textField in self.textFields! {
             let container = textField.superview
-            if let effectView = container?.superview?.subviews[0] where effectView is UIVisualEffectView {
-                container?.backgroundColor = UIColor.clearColor()
+            if let effectView = container?.superview?.subviews[0], effectView is UIVisualEffectView {
+                container?.backgroundColor = UIColor.clear
                 effectView.removeFromSuperview()
             }
         }

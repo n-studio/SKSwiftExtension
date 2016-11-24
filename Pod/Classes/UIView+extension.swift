@@ -33,7 +33,7 @@ extension UIView {
     }
     
     public func setBorder(width: CGFloat, color: UIColor) {
-        self.layer.borderColor = color.CGColor
+        self.layer.borderColor = color.cgColor
         self.layer.borderWidth = width
     }
     
@@ -41,14 +41,14 @@ extension UIView {
         let hues:[CGFloat] = [76, 98, 160, 217, 292, 318, 327, 21, 30, 41, 48, 58]
         let hue: CGFloat = hues[Int(arc4random_uniform(UInt32(hues.count)))]
         let color = UIColor(hue: hue / 36.0, saturation: 1.0, brightness: 1.0, alpha: 1.0)
-        self.layer.borderColor = color.CGColor
+        self.layer.borderColor = color.cgColor
         self.layer.borderWidth = 1.5
     }
     
     // http://stackoverflow.com/a/7284435/1013713
     public func startJiggleAnimation() {
         if isJiggling {
-            if let _ = self.layer.animationForKey("transform") {
+            if let _ = self.layer.animation(forKey: "transform") {
                 return
             }
         }
@@ -59,13 +59,13 @@ extension UIView {
         let randomInt = CGFloat(arc4random_uniform(500))
         let r = (randomInt/500.0)+0.5
         
-        let leftWobble = CGAffineTransformMakeRotation(((kAnimationRotateDeg * -1.0) - r).toRad())
-        let rightWobble = CGAffineTransformMakeRotation((kAnimationRotateDeg + r).toRad())
+        let leftWobble = CGAffineTransform(rotationAngle: ((kAnimationRotateDeg * -1.0) - r).toRad())
+        let rightWobble = CGAffineTransform(rotationAngle: (kAnimationRotateDeg + r).toRad())
         
         self.transform = leftWobble
         
-        UIView.animateWithDuration(0.15, delay: 0,
-            options: [.AllowUserInteraction, .Repeat, .Autoreverse],
+        UIView.animate(withDuration: 0.15, delay: 0,
+            options: [.allowUserInteraction, .repeat, .autoreverse],
             animations: {
                 self.transform = rightWobble
             },
@@ -73,8 +73,8 @@ extension UIView {
     }
     
     public func stopJiggleAnimation() {
-        self.layer.removeAnimationForKey("transform")
-        self.transform = CGAffineTransformIdentity // Set it back to straight
+        self.layer.removeAnimation(forKey: "transform")
+        self.transform = CGAffineTransform.identity // Set it back to straight
         
         isJiggling = false
     }
