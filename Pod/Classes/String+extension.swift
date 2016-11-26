@@ -66,7 +66,7 @@ extension String {
         return self[r.first! ..< r.last! + 1]
     }
 
-    public func replace(pattern: String, withString text: String, options: [String:AnyObject]!) -> String {
+    public func replace(_ pattern: String, withString text: String, options: [String:AnyObject]!) -> String {
         let length = self.characters.count
         var regexOptions: NSRegularExpression.Options
         if let caseSensitive = options["caseSensitive"] {
@@ -84,7 +84,7 @@ extension String {
         return regex.stringByReplacingMatches(in: self, options: [], range: NSMakeRange(0, length), withTemplate: text)
     }
     
-    public func split(splitter: String) -> Array<String> {
+    public func split(_ splitter: String) -> Array<String> {
         return self.components(separatedBy: splitter)
     }
 }
