@@ -53,7 +53,7 @@ class StringSpec: QuickSpec {
             }
             context("if case sensitivity is disabled") {
                 it("it replaces even if case doesn't match") {
-                    expect("hello world".replace(pattern: "World", withString: "kitty", options: ["caseSensitive": false as AnyObject])).to(equal("hello kitty"))
+                    expect("hello world".replace("World", withString: "kitty", options: ["caseSensitive": false as AnyObject])).to(equal("hello kitty"))
                 }
             }
         }
