@@ -53,6 +53,11 @@ extension String {
         else if lastIndex < 0 {
             lastIndex = 0
         }
+        if firstIndex > lastIndex {
+            let tmpIndex = firstIndex
+            firstIndex = lastIndex
+            lastIndex = tmpIndex
+        }
         
         return substring(with: Range(characters.index(startIndex, offsetBy: firstIndex)..<characters.index(startIndex, offsetBy: lastIndex)))
     }

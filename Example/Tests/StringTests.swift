@@ -17,6 +17,7 @@ class StringSpec: QuickSpec {
                 expect("hello"[-3 ..< -1]).to(equal("ll"))
                 expect("hello world"[-5 ... -4]).to(equal("wo"))
                 expect("hello world"[-5 ... -5]).to(equal("w"))
+                expect("(1)"[-2 ..< 2]).to(equal("1"))
             }
             context("if out of range") {
                 it("it still works") {
