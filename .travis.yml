@@ -9,6 +9,7 @@ podfile: Example/Podfile
 before_install:
 - gem uninstall cocoapods -a
 - gem install cocoapods --pre # Since Travis is not always on latest version
+- gem install xcpretty
 - pod repo update
 - pod install --project-directory=Example
 osx_image: xcode8.1
