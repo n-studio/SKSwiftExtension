@@ -20,6 +20,7 @@
 		E23D6F1D1BE860C10076C829 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		E23D6F1F1BE8655A0076C829 /* ArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23D6F1E1BE8655A0076C829 /* ArrayTests.swift */; };
 		E23D6F211BE865BD0076C829 /* GeometryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23D6F201BE865BD0076C829 /* GeometryTests.swift */; };
+		E2EA5FE01DEA53E000C3810D /* RangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EA5FDF1DEA53E000C3810D /* RangeTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		E21F125E1BE8B364008AD4FD /* KeyboardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardTests.swift; sourceTree = "<group>"; };
 		E23D6F1E1BE8655A0076C829 /* ArrayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayTests.swift; sourceTree = "<group>"; };
 		E23D6F201BE865BD0076C829 /* GeometryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeometryTests.swift; sourceTree = "<group>"; };
+		E2EA5FDF1DEA53E000C3810D /* RangeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeTests.swift; sourceTree = "<group>"; };
 		E582A27871B41E1BBC211C5D /* Pods_sehkaiSwiftExtension_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sehkaiSwiftExtension_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9447F7495C81B72A594F131 /* Pods_sehkaiSwiftExtension_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sehkaiSwiftExtension_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -145,6 +147,7 @@
 				E21F125A1BE8B352008AD4FD /* UIImageTests.swift */,
 				E21F125C1BE8B35B008AD4FD /* UIViewTests.swift */,
 				E21F125E1BE8B364008AD4FD /* KeyboardTests.swift */,
+				E2EA5FDF1DEA53E000C3810D /* RangeTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -403,6 +406,7 @@
 				E23D6F1D1BE860C10076C829 /* Tests.swift in Sources */,
 				E23D6F211BE865BD0076C829 /* GeometryTests.swift in Sources */,
 				E21F125D1BE8B35B008AD4FD /* UIViewTests.swift in Sources */,
+				E2EA5FE01DEA53E000C3810D /* RangeTests.swift in Sources */,
 				E21F125F1BE8B364008AD4FD /* KeyboardTests.swift in Sources */,
 				E21F125B1BE8B352008AD4FD /* UIImageTests.swift in Sources */,
 				E21F12591BE8B344008AD4FD /* StringTests.swift in Sources */,

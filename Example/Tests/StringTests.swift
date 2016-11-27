@@ -57,5 +57,20 @@ class StringSpec: QuickSpec {
                 }
             }
         }
+        
+        describe("ranges") {
+            it("converts range to nsrange and nsrange to range") {
+                let string = "a👿b🇩🇪c"
+                let range = string.range(of: "🇩🇪")!
+                
+                // String range to NSRange:
+                let nsrange = string.nsRange(from: range)
+                expect((string as NSString).substring(with: nsrange)).to(equal("🇩🇪"))
+                
+                // NSRange back to String range:
+                let range2 = string.range(from: nsrange)!
+                expect(string.substring(with: range2)).to(equal("🇩🇪"))
+            }
+        }
     }
 }
