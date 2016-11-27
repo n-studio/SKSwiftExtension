@@ -42,6 +42,8 @@ class StringSpec: QuickSpec {
                     expect("hello"[3..<3]).to(equal(""))
                     expect("hello"[-4 ..< -4]).to(equal(""))
                     expect("hello"[-4 ... -4]).to(equal("e"))
+                    expect(""[-1 ... -1]).to(equal(""))
+                    expect("h"[-1 ... -1]).to(equal("h"))
                 }
             }
         }

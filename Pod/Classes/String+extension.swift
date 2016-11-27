@@ -27,31 +27,36 @@ extension String {
     public subscript (r: Range<Int>) -> String {
         var firstIndex = r.lowerBound
         var lastIndex = r.upperBound
+        let length = self.characters.count
+        
+        if length == 0 {
+            return ""
+        }
         
         // authorize out of bounds range
-        if firstIndex < -self.characters.count {
-            firstIndex = -self.characters.count
+        if firstIndex < -length {
+            firstIndex = -length
         }
-        if lastIndex < -self.characters.count {
-            lastIndex = -self.characters.count
+        if lastIndex < -length {
+            lastIndex = -length
         }
-        if firstIndex > self.characters.count {
-            firstIndex = self.characters.count
+        if firstIndex > length {
+            firstIndex = length
         }
-        if lastIndex > self.characters.count {
-            lastIndex = self.characters.count
+        if lastIndex > length {
+            lastIndex = length
         }
         
         // modulo in Swift sucks
         if firstIndex < 0 {
-            firstIndex = (self.characters.count + (firstIndex % self.characters.count)) % self.characters.count
+            firstIndex = (length + (firstIndex % length)) % length
             // exception with index = -1
             if lastIndex == 0 {
-                lastIndex = self.characters.count
+                lastIndex = length
             }
         }
         if lastIndex < 0 {
-            lastIndex = (self.characters.count + (lastIndex % self.characters.count)) % self.characters.count
+            lastIndex = (length + (lastIndex % length)) % length
         }
         
         // ensure the order is fine
@@ -67,23 +72,28 @@ extension String {
     public subscript (r: CountableClosedRange<Int>) -> String {
         var firstIndex = r.lowerBound
         var lastIndex = r.upperBound
+        let length = self.characters.count
+        
+        if length == 0 {
+            return ""
+        }
         
         // modulo in Swift sucks
-        let moduloedFirstIndex = (self.characters.count + (firstIndex % self.characters.count)) % self.characters.count
-        let moduloedLastIndex = (self.characters.count + (lastIndex % self.characters.count)) % self.characters.count
+        let moduloedFirstIndex = (length + (firstIndex % length)) % length
+        let moduloedLastIndex = (length + (lastIndex % length)) % length
         
         if moduloedFirstIndex > moduloedLastIndex {
             firstIndex = firstIndex + 1
             // exception with index = -1
             if firstIndex == 0 {
-                firstIndex = self.characters.count
+                firstIndex = length
             }
         }
         else {
             lastIndex = lastIndex + 1
             // exception with index = -1
             if lastIndex == 0 {
-                lastIndex = self.characters.count
+                lastIndex = length
             }
         }
         
