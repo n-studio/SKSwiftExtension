@@ -25,34 +25,36 @@ extension String {
     }
     
     public subscript (r: Range<Int>) -> String {
-        var firstIndex = min(r.lowerBound, r.upperBound)
-        var lastIndex = max(r.lowerBound, r.upperBound)
-        if firstIndex < 0 && lastIndex <= 0 {
-            firstIndex = self.characters.count + firstIndex
-            lastIndex = self.characters.count + lastIndex
+        var firstIndex = r.lowerBound
+        var lastIndex = r.upperBound
+        
+        // authorize out of bounds range
+        if firstIndex < -self.characters.count {
+            firstIndex = -self.characters.count
         }
-        else if lastIndex <= 0 && lastIndex < firstIndex {
-            let tmpIndex = firstIndex
-            firstIndex = lastIndex
-            lastIndex = self.characters.count + tmpIndex
-        }
-        else if firstIndex < 0 {
-            let tmpIndex = firstIndex
-            firstIndex = lastIndex
-            lastIndex = self.characters.count + tmpIndex
+        if lastIndex < -self.characters.count {
+            lastIndex = -self.characters.count
         }
         if firstIndex > self.characters.count {
-            firstIndex = min(lastIndex, self.characters.count)
-        }
-        else if firstIndex < 0 {
-            firstIndex = 0
+            firstIndex = self.characters.count
         }
         if lastIndex > self.characters.count {
             lastIndex = self.characters.count
         }
-        else if lastIndex < 0 {
-            lastIndex = 0
+        
+        // modulo in Swift sucks
+        if firstIndex < 0 {
+            firstIndex = (self.characters.count + (firstIndex % self.characters.count)) % self.characters.count
+            // exception with index = -1
+            if lastIndex == 0 {
+                lastIndex = self.characters.count
+            }
         }
+        if lastIndex < 0 {
+            lastIndex = (self.characters.count + (lastIndex % self.characters.count)) % self.characters.count
+        }
+        
+        // ensure the order is fine
         if firstIndex > lastIndex {
             let tmpIndex = firstIndex
             firstIndex = lastIndex
@@ -63,7 +65,36 @@ extension String {
     }
     
     public subscript (r: CountableClosedRange<Int>) -> String {
-        return self[r.first! ..< r.last! + 1]
+        var firstIndex = r.lowerBound
+        var lastIndex = r.upperBound
+        
+        // modulo in Swift sucks
+        let moduloedFirstIndex = (self.characters.count + (firstIndex % self.characters.count)) % self.characters.count
+        let moduloedLastIndex = (self.characters.count + (lastIndex % self.characters.count)) % self.characters.count
+        
+        if moduloedFirstIndex > moduloedLastIndex {
+            firstIndex = firstIndex + 1
+            // exception with index = -1
+            if firstIndex == 0 {
+                firstIndex = self.characters.count
+            }
+        }
+        else {
+            lastIndex = lastIndex + 1
+            // exception with index = -1
+            if lastIndex == 0 {
+                lastIndex = self.characters.count
+            }
+        }
+        
+        // ensure the order is fine
+        if firstIndex > lastIndex {
+            let tmpIndex = firstIndex
+            firstIndex = lastIndex
+            lastIndex = tmpIndex
+        }
+        
+        return self[firstIndex ..< lastIndex]
     }
 
     public func replace(_ pattern: String, withString text: String, options: [String:AnyObject]!) -> String {

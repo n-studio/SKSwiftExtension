@@ -15,17 +15,21 @@ class StringSpec: QuickSpec {
             it("supports negative range") {
                 expect("hello"[-3 ... -1]).to(equal("llo"))
                 expect("hello"[-3 ..< -1]).to(equal("ll"))
+                expect("hello"[0 ..< 3]).to(equal("hel"))
+                expect("hello"[0 ... 4]).to(equal("hello"))
+                expect("hello"[-1 ... 0]).to(equal("hello"))
                 expect("hello world"[-5 ... -4]).to(equal("wo"))
                 expect("hello world"[-5 ... -5]).to(equal("w"))
                 expect("(1)"[-2 ..< 2]).to(equal("1"))
             }
             context("if out of range") {
                 it("it still works") {
-                    expect("hello"[0...9]).to(equal("hello"))
-                }
-                it("supports subscript with negative range") {
+                    expect("hello"[0...14]).to(equal("hello"))
+                    expect("hello"[-5 ... 7]).to(equal("hello"))
                     expect("hello"[-3 ..< 0]).to(equal("llo"))
-                    expect("hello"[-9 ... -1]).to(equal("hello"))
+                    expect("hello"[-14 ... -1]).to(equal("hello"))
+                    expect("hello"[-14 ... 7]).to(equal("hello"))
+                    expect("hello"[-14 ..< 7]).to(equal("hello"))
                 }
             }
             context("nil length range") {
