@@ -6,20 +6,23 @@
 //  Copyright (c) 2015 Solfanto, Inc. All rights reserved.
 //
 
-import UIKit
+#if os(iOS) || os(tvOS)
+    import UIKit
 
-extension UIImage {
-    public class func imageWithColor(color: UIColor, size: CGSize) -> UIImage {
-        let rect = CGRect(origin: CGPoint.zero, size: size)
-        UIGraphicsBeginImageContext(rect.size)
-        let context = UIGraphicsGetCurrentContext()
-        
-        context!.setFillColor(color.cgColor)
-        context!.fill(rect)
-        
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        return image!
+    extension UIImage {
+        public class func imageWithColor(color: UIColor, size: CGSize) -> UIImage {
+            let rect = CGRect(origin: CGPoint.zero, size: size)
+            UIGraphicsBeginImageContext(rect.size)
+            let context = UIGraphicsGetCurrentContext()
+            
+            context!.setFillColor(color.cgColor)
+            context!.fill(rect)
+            
+            let image = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            
+            return image!
+        }
     }
-}
+
+#endif
