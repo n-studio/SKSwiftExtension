@@ -16,7 +16,7 @@
 //      bs_unsetKeyboardNotifications()
 //  }
 
-#if os(iOS) || os(tvOS)
+#if os(iOS)
     import UIKit
 
     extension UIViewController {
