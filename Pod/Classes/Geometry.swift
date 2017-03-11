@@ -44,6 +44,14 @@ public func + (left: CGPoint, right: CGVector) -> CGPoint {
     return CGPoint(x: left.x + right.dx, y: left.y + right.dy)
 }
 
+public func + (left: CGSize, right: CGSize) -> CGSize {
+    return CGSize(width: left.width + right.width, height: left.height + right.height)
+}
+
+public func += (left: inout CGSize, right: CGSize) {
+    left = left + right
+}
+
 public func - (left: CGPoint, right: CGPoint) -> CGPoint {
     return CGPoint(x: left.x - right.x, y: left.y - right.y)
 }
@@ -55,6 +63,14 @@ public func -= (left: inout CGPoint, right: CGPoint) {
 
 public func - (left: CGPoint, right: CGVector) -> CGPoint {
     return CGPoint(x: left.x - right.dx, y: left.y - right.dy)
+}
+
+public func - (left: CGSize, right: CGSize) -> CGSize {
+    return CGSize(width: left.width - right.width, height: left.height - right.height)
+}
+
+public func -= (left: inout CGSize, right: CGSize) {
+    left = left - right
 }
 
 public func * (left: CGVector, right: CGFloat) -> CGVector {
