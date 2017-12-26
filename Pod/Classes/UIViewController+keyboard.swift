@@ -90,7 +90,7 @@
             )
         }
         
-        public func bs_keyboardWillAppear(notification: NSNotification) {
+        @objc public func bs_keyboardWillAppear(notification: NSNotification) {
             if self.outsideKeyboardTapRecognizer == nil {
                 self.outsideKeyboardTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard(_:)))
             }
@@ -105,7 +105,7 @@
             
         }
         
-        public func bs_keyboardDidAppear(notification: NSNotification) {
+        @objc public func bs_keyboardDidAppear(notification: NSNotification) {
             self.keyboardDidAppear(notification: notification)
         }
         
@@ -113,7 +113,7 @@
             
         }
         
-        public func bs_keyboardWillHide(notification: NSNotification) {
+        @objc public func bs_keyboardWillHide(notification: NSNotification) {
             if let recognizer = self.outsideKeyboardTapRecognizer {
                 self.view.removeGestureRecognizer(recognizer)
             }
@@ -125,7 +125,7 @@
             
         }
         
-        public func dismissKeyboard(_ sender: AnyObject?) {
+        @objc public func dismissKeyboard(_ sender: AnyObject?) {
             self.view.endEditing(true)
         }
         

@@ -75,7 +75,7 @@ class StringSpec: QuickSpec {
                 
                 // NSRange back to String range:
                 let range2 = string.range(from: nsrange)!
-                expect(string.substring(with: range2)).to(equal("🇩🇪"))
+                expect(String(string[range2])).to(equal("🇩🇪"))
             }
         }
     }
