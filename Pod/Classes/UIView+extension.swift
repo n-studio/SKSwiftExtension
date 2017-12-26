@@ -29,7 +29,7 @@
             }
         }
         
-        public func setRadius(value: CGFloat) {
+        public func setRadius(_ value: CGFloat) {
             self.layer.cornerRadius = value
         }
         

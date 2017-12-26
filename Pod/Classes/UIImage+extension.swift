@@ -10,7 +10,7 @@
     import UIKit
 
     extension UIImage {
-        public class func imageWithColor(color: UIColor, size: CGSize) -> UIImage {
+        public class func image(withColor color: UIColor, size: CGSize) -> UIImage {
             let rect = CGRect(origin: CGPoint.zero, size: size)
             UIGraphicsBeginImageContext(rect.size)
             let context = UIGraphicsGetCurrentContext()

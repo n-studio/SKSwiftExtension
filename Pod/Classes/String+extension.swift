@@ -8,13 +8,13 @@
 
 import Foundation
 
-public func t(text: String, comment: String = "") -> String {
+public func t(_ text: String, comment: String = "") -> String {
     return NSLocalizedString(text, comment: comment)
 }
 
 extension String {
     
-    public subscript (i: Int) -> String {
+    public subscript(i: Int) -> String {
         if self.count > i && i >= 0 {
             return String(self[self.index(self.startIndex, offsetBy: i)])
         }
@@ -24,7 +24,7 @@ extension String {
         return ""
     }
     
-    public subscript (r: Range<Int>) -> String {
+    public subscript(r: Range<Int>) -> String {
         var firstIndex = r.lowerBound
         var lastIndex = r.upperBound
         let length = self.count
@@ -69,7 +69,7 @@ extension String {
         return String(self[Range(self.index(startIndex, offsetBy: firstIndex)..<self.index(startIndex, offsetBy: lastIndex))])
     }
     
-    public subscript (r: CountableClosedRange<Int>) -> String {
+    public subscript(r: CountableClosedRange<Int>) -> String {
         var firstIndex = r.lowerBound
         var lastIndex = r.upperBound
         let length = self.count
