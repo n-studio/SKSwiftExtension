@@ -22,7 +22,7 @@ precedencegroup ExponentiativePrecedence {
 }
 
 infix operator **: ExponentiativePrecedence
-public func ** (left: CGFloat, right: CGFloat) -> CGFloat! {
+public func ** (left: CGFloat, right: CGFloat) -> CGFloat {
     return pow(left, right)
 }
 

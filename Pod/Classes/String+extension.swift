@@ -66,7 +66,7 @@ extension String {
             lastIndex = tmpIndex
         }
         
-        return String(self[Range(self.index(startIndex, offsetBy: firstIndex)..<self.index(startIndex, offsetBy: lastIndex))])
+        return String(self[self.index(startIndex, offsetBy: firstIndex)..<self.index(startIndex, offsetBy: lastIndex)])
     }
     
     public subscript(r: CountableClosedRange<Int>) -> String {
