@@ -8,7 +8,7 @@
 
 // Geometry/Math helpers
 
-import Foundation
+import CoreGraphics
 
 extension CGFloat {
     public func toRad() -> CGFloat {
