@@ -10,27 +10,27 @@
     import UIKit
 
     extension UIAlertController {
-        public convenience init(title: String?, message: String?, preferredStyle: UIAlertControllerStyle, cancelButtonTitle: String?) {
+        public convenience init(title: String?, message: String?, preferredStyle: UIAlertController.Style, cancelButtonTitle: String?) {
             
             self.init(title: title, message: message, preferredStyle: preferredStyle)
             if let title = cancelButtonTitle {
-                let action = UIAlertAction(title: title, style: UIAlertActionStyle.cancel, handler: nil)
+                let action = UIAlertAction(title: title, style: UIAlertAction.Style.cancel, handler: nil)
                 self.addAction(action)
             }
         }
         
         public func addCancelActionWithTitle(title: String, handler: ((UIAlertAction) -> Void)?) {
-            let action = UIAlertAction(title: title, style: UIAlertActionStyle.cancel, handler: handler)
+            let action = UIAlertAction(title: title, style: UIAlertAction.Style.cancel, handler: handler)
             self.addAction(action)
         }
         
         public func addActionWithTitle(title: String, handler: ((UIAlertAction) -> Void)?) {
-            let action = UIAlertAction(title: title, style: UIAlertActionStyle.default, handler: handler)
+            let action = UIAlertAction(title: title, style: UIAlertAction.Style.default, handler: handler)
             self.addAction(action)
         }
         
         public func addDestructiveActionWithTitle(title: String, handler: ((UIAlertAction) -> Void)?) {
-            let action = UIAlertAction(title: title, style: UIAlertActionStyle.destructive, handler: handler)
+            let action = UIAlertAction(title: title, style: UIAlertAction.Style.destructive, handler: handler)
             self.addAction(action)
         }
         

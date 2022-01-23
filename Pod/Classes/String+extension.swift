@@ -15,11 +15,11 @@ public func t(text: String, comment: String = "") -> String {
 extension String {
     
     public subscript (i: Int) -> String {
-        if self.characters.count > i && i >= 0 {
-            return String(self[self.characters.index(self.startIndex, offsetBy: i)])
+        if self.count > i && i >= 0 {
+            return String(self[self.index(self.startIndex, offsetBy: i)])
         }
-        else if i <= 0 && i >= -self.characters.count {
-            return String(self[self.characters.index(self.startIndex, offsetBy: self.characters.count + i)])
+        else if i <= 0 && i >= -self.count {
+            return String(self[self.index(self.startIndex, offsetBy: self.count + i)])
         }
         return ""
     }
@@ -27,7 +27,7 @@ extension String {
     public subscript (r: Range<Int>) -> String {
         var firstIndex = r.lowerBound
         var lastIndex = r.upperBound
-        let length = self.characters.count
+        let length = self.count
         
         if length == 0 {
             return ""
@@ -66,13 +66,13 @@ extension String {
             lastIndex = tmpIndex
         }
         
-        return substring(with: Range(characters.index(startIndex, offsetBy: firstIndex)..<characters.index(startIndex, offsetBy: lastIndex)))
+        return String(self[self.index(startIndex, offsetBy: firstIndex)..<self.index(startIndex, offsetBy: lastIndex)])
     }
     
     public subscript (r: CountableClosedRange<Int>) -> String {
         var firstIndex = r.lowerBound
         var lastIndex = r.upperBound
-        let length = self.characters.count
+        let length = self.count
         
         if length == 0 {
             return ""
@@ -108,7 +108,7 @@ extension String {
     }
 
     public func replace(_ pattern: String, withString text: String, options: [String:AnyObject]!) -> String {
-        let length = self.characters.count
+        let length = self.count
         var regexOptions: NSRegularExpression.Options
         if let caseSensitive = options["caseSensitive"] {
             if caseSensitive as? Bool == true {
@@ -131,8 +131,9 @@ extension String {
     
     // http://stackoverflow.com/questions/25138339/nsrange-to-rangestring-index
     public func nsRange(from range: Range<String.Index>) -> NSRange {
-        let from = range.lowerBound.samePosition(in: utf16)
-        let to = range.upperBound.samePosition(in: utf16)
+        guard let from = range.lowerBound.samePosition(in: utf16), let to = range.upperBound.samePosition(in: utf16) else {
+            return NSRange.init(location: 0, length: 0)
+        }
         return NSRange(location: utf16.distance(from: utf16.startIndex, to: from),
                        length: utf16.distance(from: from, to: to))
     }
