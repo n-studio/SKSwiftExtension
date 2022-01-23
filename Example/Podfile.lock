@@ -1,7 +1,7 @@
 PODS:
   - Nimble (9.2.1)
   - Quick (4.0.0)
-  - SKSwiftExtension (0.1.0)
+  - SKSwiftExtension (0.1.1)
 
 DEPENDENCIES:
   - Nimble
@@ -20,7 +20,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Nimble: e7e615c0335ee4bf5b0d786685451e62746117d5
   Quick: 6473349e43b9271a8d43839d9ba1c442ed1b7ac4
-  SKSwiftExtension: 90c68d52f452ae79fac6e83f597706dc38c78c35
+  SKSwiftExtension: 276581135ce3c245b82f793fc5b347c501d7cadd
 
 PODFILE CHECKSUM: e9c24ace355c69fa0bbd10fe38b6c7449faaa89d
 
