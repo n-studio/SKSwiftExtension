@@ -12,7 +12,7 @@ import Foundation
 
 extension CGFloat {
     public func toRad() -> CGFloat {
-        return (CGFloat(M_PI) * self / 180.0)
+        return (CGFloat(Double.pi) * self / 180.0)
     }
 }
 
