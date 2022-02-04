@@ -12,7 +12,7 @@ import CoreGraphics
 
 extension CGFloat {
     public func toRad() -> CGFloat {
-        return (CGFloat(Double.pi) * self / 180.0)
+        return (CGFloat.pi * self / 180.0)
     }
 }
 
@@ -22,7 +22,7 @@ precedencegroup ExponentiativePrecedence {
 }
 
 infix operator **: ExponentiativePrecedence
-public func ** (left: CGFloat, right: CGFloat) -> CGFloat! {
+public func ** (left: CGFloat, right: CGFloat) -> CGFloat {
     return pow(left, right)
 }
 
@@ -135,7 +135,7 @@ public func mean(_ points: [CGPoint]) -> CGPoint {
     if points.count == 0 {
         return CGPoint.zero
     }
-    
+
     var sum: CGPoint = CGPoint.zero
     for point in points {
         sum += point

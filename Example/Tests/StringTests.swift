@@ -47,7 +47,7 @@ class StringSpec: QuickSpec {
                 }
             }
         }
-        
+
         describe("String supports replace") {
             it("supports replace with string pattern") {
                 expect("hello world".replacingOccurrences(of: "world", with: "kitty")).to(equal("hello kitty"))
@@ -63,16 +63,16 @@ class StringSpec: QuickSpec {
                 }
             }
         }
-        
+
         describe("ranges") {
             it("converts range to nsrange and nsrange to range") {
                 let string = "a👿b🇩🇪c"
                 let range = string.range(of: "🇩🇪")!
-                
+
                 // String range to NSRange:
                 let nsrange = string.nsRange(from: range)
                 expect((string as NSString).substring(with: nsrange)).to(equal("🇩🇪"))
-                
+
                 // NSRange back to String range:
                 let range2 = string.range(from: nsrange)!
                 expect(string[range2]).to(equal("🇩🇪"))
