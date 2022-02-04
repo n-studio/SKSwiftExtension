@@ -8,7 +8,7 @@
 
 // Geometry/Math helpers
 
-import Foundation
+import CoreGraphics
 
 extension CGFloat {
     public func toRad() -> CGFloat {
@@ -135,7 +135,7 @@ public func mean(_ points: [CGPoint]) -> CGPoint {
     if points.count == 0 {
         return CGPoint.zero
     }
-    
+
     var sum: CGPoint = CGPoint.zero
     for point in points {
         sum += point

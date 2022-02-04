@@ -50,6 +50,7 @@
 		103BB375C6C8D6F53F0C4F4D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		1B3FF435824799DD479AE0E7 /* Pods-sehkaiSwiftExtension_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sehkaiSwiftExtension_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-sehkaiSwiftExtension_Example/Pods-sehkaiSwiftExtension_Example.release.xcconfig"; sourceTree = "<group>"; };
 		2E346C2786E5F06875111476 /* Pods-sehkaiSwiftExtension_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sehkaiSwiftExtension_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sehkaiSwiftExtension_Example/Pods-sehkaiSwiftExtension_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		349286D4279D3B71003E5208 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.swift; path = ../Package.swift; sourceTree = "<group>"; };
 		37C44BFF82C8A8AF6F14EAD3 /* Pods-sehkaiSwiftExtension_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sehkaiSwiftExtension_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sehkaiSwiftExtension_Tests/Pods-sehkaiSwiftExtension_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		3805854ACB5808A9459CCCE3 /* Pods-sehkaiSwiftExtension_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sehkaiSwiftExtension_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-sehkaiSwiftExtension_Tests/Pods-sehkaiSwiftExtension_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		4DD9461C0C4BE7E8104F3CB1 /* SKSwiftExtension.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SKSwiftExtension.podspec; path = ../SKSwiftExtension.podspec; sourceTree = "<group>"; };
@@ -98,6 +99,7 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
+				349286D4279D3B71003E5208 /* Package.swift */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for sehkaiSwiftExtension */,
 				607FACE81AFB9204008FA782 /* Tests */,
@@ -242,7 +244,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 1230;
+				LastUpgradeCheck = 1320;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
@@ -450,7 +452,6 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -507,7 +508,6 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -540,7 +540,6 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -557,7 +556,6 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

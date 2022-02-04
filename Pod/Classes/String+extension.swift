@@ -13,7 +13,7 @@ public func t(_ text: String, comment: String = "") -> String {
 }
 
 extension String {
-    
+
     public subscript(i: Int) -> String {
         if self.count > i && i >= 0 {
             return String(self[self.index(self.startIndex, offsetBy: i)])
@@ -23,16 +23,16 @@ extension String {
         }
         return ""
     }
-    
+
     public subscript(r: Range<Int>) -> String {
         var firstIndex = r.lowerBound
         var lastIndex = r.upperBound
         let length = self.count
-        
+
         if length == 0 {
             return ""
         }
-        
+
         // authorize out of bounds range
         if firstIndex < -length {
             firstIndex = -length
@@ -46,7 +46,7 @@ extension String {
         if lastIndex > length {
             lastIndex = length
         }
-        
+
         // modulo in Swift sucks
         if firstIndex < 0 {
             firstIndex = (length + (firstIndex % length)) % length
@@ -58,30 +58,30 @@ extension String {
         if lastIndex < 0 {
             lastIndex = (length + (lastIndex % length)) % length
         }
-        
+
         // ensure the order is fine
         if firstIndex > lastIndex {
             let tmpIndex = firstIndex
             firstIndex = lastIndex
             lastIndex = tmpIndex
         }
-        
+
         return String(self[self.index(startIndex, offsetBy: firstIndex)..<self.index(startIndex, offsetBy: lastIndex)])
     }
-    
+
     public subscript(r: CountableClosedRange<Int>) -> String {
         var firstIndex = r.lowerBound
         var lastIndex = r.upperBound
         let length = self.count
-        
+
         if length == 0 {
             return ""
         }
-        
+
         // modulo in Swift sucks
         let moduloedFirstIndex = (length + (firstIndex % length)) % length
         let moduloedLastIndex = (length + (lastIndex % length)) % length
-        
+
         if moduloedFirstIndex > moduloedLastIndex {
             firstIndex = firstIndex + 1
             // exception with index = -1
@@ -96,14 +96,14 @@ extension String {
                 lastIndex = length
             }
         }
-        
+
         // ensure the order is fine
         if firstIndex > lastIndex {
             let tmpIndex = firstIndex
             firstIndex = lastIndex
             lastIndex = tmpIndex
         }
-        
+
         return self[firstIndex ..< lastIndex]
     }
 
@@ -124,16 +124,16 @@ extension String {
         let regex = try! NSRegularExpression(pattern: pattern, options: regexOptions)
         return regex.stringByReplacingMatches(in: self, options: [], range: NSMakeRange(0, length), withTemplate: text)
     }
-    
+
     public func split(_ splitter: String) -> Array<String> {
         return self.components(separatedBy: splitter)
     }
-    
+
     // http://stackoverflow.com/questions/25138339/nsrange-to-rangestring-index
     public func nsRange(from range: Range<Index>) -> NSRange {
         return NSRange(range, in: self)
     }
-    
+
     public func range(from nsRange: NSRange) -> Range<String.Index>? {
         guard
             let from16 = utf16.index(utf16.startIndex, offsetBy: nsRange.location, limitedBy: utf16.endIndex),
